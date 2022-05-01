@@ -67,7 +67,7 @@ function Msg({name,pic}) {
     <div className="msg-container"> 
       
     <img className='profile-pic' src={pic} alt={name}/>
-    <h1>Hello {name} </h1>
+    <h1>Welcome 😎👋 {name} </h1>
     <Counter />
     </div>
   )
