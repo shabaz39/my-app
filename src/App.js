@@ -1,35 +1,48 @@
 import "./styles.css";
 import { useState } from "react";
-
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Card } from 'react-bootstrap';
+ 
 export default function App() {
 
  
   const users = [
     {
-      name: "Vaibhav",
-      pic: "https://images.pexels.com/photos/771742/pexels-photo-771742.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500",
+      name: "RRR",
+      pic: 'https://www.telugubulletin.com/wp-content/uploads/2021/03/Ramaraju-1-696x994.jpg' ,
+      description: 'lorem ipsum',
+      rating: '⭐ 8.8'
     },
+
     {
-      name: "Tejaswini",
-      pic: "https://images.unsplash.com/photo-1532074205216-d0e1f4b87368?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8d29tYW4lMjBwcm9maWxlfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
+      name: "The Dark Knight",
+      pic: 'https://www.telugubulletin.com/wp-content/uploads/2021/03/Ramaraju-1-696x994.jpg' ,
+      description: 'lorem ipsum',
+      rating: '⭐ 8.8'
     },
+
     {
-      name: "Shreyas",
-      pic: "https://1.bp.blogspot.com/-OUtpaIR5QhI/YTuyWw8XvtI/AAAAAAAAuUk/ZtNLZvNSoL8pyaYESOjwReXEhYu1zFltgCLcBGAsYHQ/s1536/Best-Profile-Pic-For-Boys%2B%252813%2529.jpg",
+      name: "Attack on Titan",
+      pic: 'https://www.telugubulletin.com/wp-content/uploads/2021/03/Ramaraju-1-696x994.jpg' ,
+      description: 'lorem ipsum',
+      rating: '⭐ 8.8'
     },
+
     {
-      name: "Osama",
-      pic: "https://1.bp.blogspot.com/-OUtpaIR5QhI/YTuyWw8XvtI/AAAAAAAAuUk/ZtNLZvNSoL8pyaYESOjwReXEhYu1zFltgCLcBGAsYHQ/s1536/Best-Profile-Pic-For-Boys%2B%252813%2529.jpg",
+      name: "SpyxFamily",
+      pic: 'https://www.telugubulletin.com/wp-content/uploads/2021/03/Ramaraju-1-696x994.jpg' ,
+      description: 'lorem ipsum',
+      rating: '⭐ 8.8'
     },
+    
   ];
 
   return (
-    <div className="App">
+    <div className="App"  >
 
      {users.map((usr)=> (
        
-       <Msg name={usr.name} pic={usr.pic}/>
+       <Msg name={usr.name} pic={usr.pic} rating={usr.rating} description={usr.description}/>
        
         
      ))}
@@ -60,25 +73,29 @@ function Counter () {
   )
 }
 
-function Msg({name,pic}) { 
+function Msg({name,pic, rating}) { 
  
 
   return (
-    <div className="msg-container"> 
-      
-    <img className='profile-pic' src={pic} alt={name}/>
-    <h1>Welcome 😎👋 {name} </h1>
+
+     // Adding React bootstrap npm install react-bootstrap bootstrap
+    // import individual elements like card, button from 'react-bootstrap'
+
+    <div className="msg-container" >
+      <Card className='msg-container-card' >
+  <Card.Img variant="top" src={pic} />
+  <Card.Body>
+    <Card.Title><h1> {name}  <span>{rating}</span> </h1></Card.Title>
+    <Card.Text>
+    It is a fictional story about two Indian revolutionaries, Alluri Sitarama Raju (Charan) and Komaram Bheem (Rama Rao), and their fight against the British Raj.
+    </Card.Text>
     <Counter />
+  </Card.Body>
+</Card>
     </div>
   )
    
   }
 
 
-  function Welcome (props) { 
-    return (
-      <div>
-        <h1> Hello {props.name} </h1>
-      </div>
-    )
-  }
+  
